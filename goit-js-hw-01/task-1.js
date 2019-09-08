@@ -1,3 +1,5 @@
+'use strict';
+
 const productName = 'Генератор защитного поля';
 const productPrice = 1000;
 

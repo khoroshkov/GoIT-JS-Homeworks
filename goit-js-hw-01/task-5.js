@@ -1,3 +1,5 @@
+'use strict';
+
 const china = "china";
 const chile = "chile";
 const australia = "australia";

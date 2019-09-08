@@ -1,3 +1,5 @@
+'use strict';
+
 const userCredits = 23580;
 const pricePerDroid = 3000;
 const orderLabel = `Укажите необходимое количество дроидов`;

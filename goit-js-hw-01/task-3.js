@@ -1,3 +1,5 @@
+'use strict';
+
 const ADMIN_PASSWORD = "jqueryismyjam";
 const authorizationForm = `Введите ваш пароль Администратора`;
 const userAuthorization = prompt(authorizationForm);
