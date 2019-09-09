@@ -17,6 +17,7 @@ const ukrainePrice = 0;
 const shippingLabel = `Укажите страну доставки:`;
 let userInput = prompt(shippingLabel);
 let shippingMessage;
+let userCountry;
 
 if (userInput === null) {
   shippingMessage = "Пожалуйста, выберите страну доставки";
@@ -25,32 +26,35 @@ if (userInput === null) {
 
   switch (userInput) {
     case china:
-      shippingMessage = `Доставка в ${china} будет стоить ${chinaPrice} кредитов`;
+      userCountry = chinaPrice;
       break;
 
     case chile:
-      shippingMessage = `Доставка в ${chile} будет стоить ${chilePrice} кредитов`;
+      userCountry = chilePrice;
       break;
 
     case australia:
-      shippingMessage = `Доставка в ${australia} будет стоить ${australiaPrice} кредитов`;
+      userCountry = australiaPrice;
       break;
 
     case india:
-      shippingMessage = `Доставка в ${india} будет стоить ${indiaPrice} кредитов`;
+      userCountry = indiaPrice;
       break;
 
     case jamaica:
-      shippingMessage = `Доставка в ${jamaica} будет стоить ${jamaicaPrice} кредитов`;
+      userCountry = jamaicaPrice;
       break;
 
     case ukraine:
-      shippingMessage = `Доставка в ${ukraine} будет стоить ${ukrainePrice} кредитов!!!`;
+      userCountry = ukrainePrice;
       break;
 
     default:
-      shippingMessage = "В вашей стране доставка не доступна";
+      alert(`Доставка в ${userInput} не доступна`);
+      throw "stop"; //  Потребовалось остановить выполнение скрипта в случае ввода отсутствующей в списке страны.
   }
+
+  shippingMessage = `Доставка в ${userInput} будет стоить ${userCountry} кредитов`;
 }
 
 alert(shippingMessage);
