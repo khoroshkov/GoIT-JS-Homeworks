@@ -2,9 +2,12 @@
 
 import users from "./users.js";
 
-const getUserNames = users => users.map(user => user.name);
+// const getUserNames = users => users.map(user => user.name); - старый вариант
+
+const getUserNames = users => users.map(({name}) => name);
 
 console.log(getUserNames(users));
+
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
 //=================
 
@@ -15,7 +18,8 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 //================
 
 
-const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender);
+const getUsersWithGender = (users, gender) => users.filter(user => user.gender === gender)
+      .map(({name}) => name);
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 //================
@@ -42,7 +46,9 @@ console.log(getUsersWithAge(users, 30, 40));
 //===============
 
 
-const calculateTotalBalance = users => users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+// const calculateTotalBalance = users => users.reduce((totalBalance, user) => totalBalance + user.balance, 0); - старый вариант
+
+const calculateTotalBalance = users => users.reduce((totalBalance, {balance}) => (totalBalance + balance), 0);
 
 console.log(calculateTotalBalance(users)); // 20916
 //===============
@@ -65,13 +71,18 @@ console.log(getNamesSortedByFriendsCount(users));
 //=================
 
 
+// const getSortedUniqueSkills = users => 
+//   users.reduce((allSkills, user) => {allSkills.push(...user.skills);
+//     return allSkills
+//     .sort()
+//     .filter((item, index) => allSkills.indexOf(item) === index);
+//    }, []); - старый вариант.
+
+
 const getSortedUniqueSkills = users => 
-  users.reduce((allSkills, user) => {allSkills.push(...user.skills);
-    return allSkills
-    .sort()
-    .filter((item, index) => allSkills.indexOf(item) === index);
-   }, []);
-
-
+  users.reduce((allSkills, user) => [...allSkills, ...user.skills], [])
+  .sort()
+  .filter((elem, index, array) => array.indexOf(elem) === index);
+  
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
