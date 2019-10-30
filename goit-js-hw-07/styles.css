@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+#gallery {
+  display: flex;
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.image-item {
+  list-style: none;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 420px;
+  margin: 0 auto;
+}
+
+#counter {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.counter-field {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-size: 40px;
+  vertical-align: middle;
+}
+
+.counter-field.negative {
+  color: red;
+  font-size: 30px;
+}
+
+button {
+  font-size: 20px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.enter-your-name {
+  width: 600px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#name-input {
+  width: 250px;
+}
+
+#validation-input {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+.change-fz {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+#controls {
+width: 400px;
+margin: 0 auto;
+padding-top: 50px;
+padding-bottom: 50px;
+text-align: center;
+}
+
+.box-button {
+  width: 100px;
+}
+
+.boxes {
+width: 600px;
+height: 400px;
+border: 1px solid black;
+margin: 0 auto;
+}
+
+.box {
+  border: 1px solid black;
+}
