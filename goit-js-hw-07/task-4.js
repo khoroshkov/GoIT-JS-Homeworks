@@ -35,6 +35,25 @@ decrementBtn.addEventListener('click', () => {
 })
 
 
+// можно решить и без if
+
+// const actions = {
+// state: {
+// value: 0,
+// },
+// decrement() {
+// this.state.value -= 1;
+// },
+// increment() {
+// this.state.value += 1;
+// },
+// };
+
+// const changeValue = ({ target }) => {
+// actions[target.dataset.action]();
+// value.textContent = actions.state.value;
+// };
+
 
 
 //========================= Вариант с конструктором функции ===============//////

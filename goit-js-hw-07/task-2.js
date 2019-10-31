@@ -10,29 +10,10 @@ const ingredients = [
 ];
 
 const ingredientsList = document.getElementById('ingredients');
-const list = document.createElement('ul');
-list.id = 'ingredients';
+let listItems = '<ul>';
 
 ingredients.forEach(function (item) {
-  let listItem = document.createElement('li');
-  listItem.textContent = item;
-  list.appendChild(listItem);
+  listItems += '<li>' + item + '</li>';
 })
 
-ingredientsList.replaceWith(list);
-
-//========= Первый вариант ============//
-
-// const ingredientsList = document.getElementById('ingredients');
-
-// function createListItem(ingredients) {
-//   let listItem;
-
-//   for(let i = 0; i < ingredients.length; i += 1) {
-//     listItem = document.createElement('li');
-//     listItem.textContent = ingredients[i];
-//     ingredientsList.appendChild(listItem);
-//   }
-// }
-
-// createListItem(ingredients);
+ingredientsList.innerHTML = listItems;
