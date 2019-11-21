@@ -27,42 +27,61 @@ function generateGalleryLayout(galleryImages) {
 }
 
 galleryContainer.insertAdjacentHTML('afterbegin', gelleryLayout);
-
 galleryContainer.addEventListener("click", openFullSize);
+
 
 const lightboxWindow = document.querySelector('.lightbox');
 const largeImageWindow = document.querySelector('.lightbox__image');
 const closeBtn = document.querySelector(".lightbox__button");
-const closeWindow = document.querySelector(".lightbox__overlay");
+const closeModalWindow = document.querySelector('.lightbox__content');
+
+closeBtn.addEventListener("click", closeFullSizeWindow);
+window.addEventListener("keydown", handleKeyPress);
+closeModalWindow.addEventListener("click", backdropClick);
+
 
 function openFullSize(event) {
   event.preventDefault();
   const target = event.target;
   const originalSize = target.getAttribute("data-source");
 
-
   lightboxWindow.classList.add("is-open");
   largeImageWindow.setAttribute("src", originalSize);
-
-
-  closeBtn.addEventListener("click", closeFullSizeWindow);
-  closeWindow.addEventListener("click", closeFullSizeWindow); //===== not working
-
 }
 
-function closeFullSizeWindow(event) {
+function closeFullSizeWindow() {
   lightboxWindow.classList.remove("is-open");
   largeImageWindow.removeAttribute("src");
-  closeBtn.removeEventListener("click", closeFullSizeWindow);
 }
 
-//===================================================== not working
-window.addEventListener("keydown", handleKeyPress);
 
 function handleKeyPress(event) {
-  console.log(event.code);
-  if (event.code === "escape") {
+  if (event.code === "Escape") {
     closeFullSizeWindow();
   }
   return;
+}
+
+function backdropClick(event) {
+  if (event.target !== event.currentTarget) {
+    return;
+  }
+  closeFullSizeWindow();
+}
+
+
+
+//===============================Попытка написать навигацию========//
+
+window.addEventListener("keydown", arrowNavigation);
+
+const fullSizeImages = galleryImages.map(image => image.original); // - масив полноразмерных картинок
+
+function arrowNavigation(event) {
+  if (event.code === "ArrowRight") {
+
+  }
+  else if (event.code === "ArrowLeft") {
+
+  }
 }
