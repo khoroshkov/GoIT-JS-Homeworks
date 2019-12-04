@@ -1,0 +1,122 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 800px;
+  height: 500px;
+  margin: 220px auto;
+  background-image: url(./images/Map-image.png);
+  background-repeat: no-repeat;
+  background-color: #cccccc;
+  box-shadow: 3px 4px 10px 0px rgba(130,130,130,0.71);
+  border-radius: 2px;
+}
+
+label {
+  display: block;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#country-search {
+  width: 400px;
+  height: 35px;
+  margin: 0 auto;
+  padding-left: 20px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.search-result {
+  display: block;
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: left;
+}
+
+h2, h3 {
+  text-align: center;
+  font-size: 22px;
+  text-transform: uppercase;
+  line-height: 9pt;
+}
+
+.country-item li {
+  list-style: none;
+}
+
+.country-list {
+  max-width: 450px;
+  padding-left: 50px;
+}
+
+.titles {
+  line-height: 25pt;
+  margin: 0;
+  padding: 0;
+}
+
+.titles span {
+  font-weight: 600;
+}
+
+.title-lang {
+  font-weight: 600;
+}
+
+.flag-img {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.text-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.country-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.language-list {
+  margin: 0;
+  padding: 0;
+}
+
+.language-list__item {
+  padding-left: 50px;
+}
+
+.ui-pnotify {
+  margin-top: 200px;
+}
